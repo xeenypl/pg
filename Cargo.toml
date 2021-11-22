@@ -2,6 +2,8 @@
 name = "pgn"
 version = "0.1.0"
 edition = "2021"
+license-file = "LICENSE"
+description = "command line pass word generator in rust."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
