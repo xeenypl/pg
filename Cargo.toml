@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2021"
 license-file = "LICENSE"
 description = "command line pass word generator in rust."
+documentation = "https://github.com/xeenypl/pgn.git"
+homepage = "https://github.com/xeenypl/pgn.git"
+repository = "https://github.com/xeenypl/pgn.git"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
