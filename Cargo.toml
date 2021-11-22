@@ -8,3 +8,4 @@ description = "command line pass word generator in rust."
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+rand = "0.8"
