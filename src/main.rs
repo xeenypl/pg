@@ -140,7 +140,7 @@ fn main() {
             eprintln!("Number convertion fail.");
             exit(1);
         }
-    }
+    };
     if length == 0 {
         eprintln!("password must have non zero legth.");
         exit(1);
@@ -152,7 +152,7 @@ fn main() {
             eprintln!("Number convertion fail.");
             exit(1);
         }
-    }
+    };
     if charset.len() == 0 {
         eprintln!("empty charset.");
         exit(1);
