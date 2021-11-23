@@ -133,13 +133,26 @@ fn main() {
     if let Some(chars) = args.value_of("chars") {
         charset.push_str(chars);
     }
-    // TODO: Clean unwraps.
-    let length: u32 = args.value_of("length").unwrap().parse().unwrap();
+    // unwraps is safe becuse of default value in arguments parser.
+    let length =  match args.value_of("length").unwrap().parse() {
+        Ok(x) => x,
+        Err(_) => {
+            eprintln!("Number convertion fail.");
+            exit(1);
+        }
+    }
     if length == 0 {
         eprintln!("password must have non zero legth.");
         exit(1);
     }
-    let count:  u32 = args.value_of("count").unwrap().parse().unwrap();
+    // unwraps is safe becuse of default value in arguments parser.
+    let count = match args.value_of("count").unwrap().parse() {
+        Ok(x) => x,
+        Err(_) => {
+            eprintln!("Number convertion fail.");
+            exit(1);
+        }
+    }
     if charset.len() == 0 {
         eprintln!("empty charset.");
         exit(1);
