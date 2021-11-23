@@ -12,3 +12,4 @@ repository = "https://github.com/xeenypl/pgn.git"
 
 [dependencies]
 rand = "0.8"
+clap = "2.31.2"
