@@ -1,6 +1,10 @@
 # pgn
 [![crates.io](https://img.shields.io/crates/v/pgn.svg)](https://crates.io/crates/pgn)
+
+
 command line pass word generator in rust.
+
+It's reimplementaito of my other project [pass-gen](https://github.com/xeenypl/pass-gen)
 
 # instalation
 ```shell
