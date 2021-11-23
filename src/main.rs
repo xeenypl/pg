@@ -1,16 +1,32 @@
 use rand::Rng;
+use rand::prelude::ThreadRng;
 use std::char;
 
-fn generate_password(charset: &str, len: u32) -> String {
-    let mut result = String::new();
-    let mut rng = rand::thread_rng();
-    for _ in 0..len {
-        let idx = rng.gen_range(0..charset.len());
-        result.push(char::from_u32(charset.as_bytes()[idx] as u32).expect(""));
+struct PassGen {
+    charset: String,
+    rng: ThreadRng,
+}
+
+impl PassGen {
+    pub fn new(charset: &str) -> Self {
+        Self {
+            charset: String::from(charset),
+            rng: rand::thread_rng()
+        }
     }
-    return result;
+    pub fn gen(&mut self, len: u32) -> String {
+        let mut result = String::new();
+        for _ in 0..len {
+            let idx = self.rng.gen_range(0..self.charset.len());
+            result.push(
+                char::from_u32(self.charset.as_bytes()[idx] as u32).expect("")
+            );
+        }
+        return result;
+    }
 }
 
 fn main() {
-    println!("{}", generate_password("qwertyuiopasdfghjklzxcvbnm", 10));
+    let mut pgn = PassGen::new("qwertyuiopasdfghjklzxcvbnm");
+    println!("{}", pgn.gen(10));
 }
